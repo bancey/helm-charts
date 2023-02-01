@@ -1,0 +1,9 @@
+{{- if .Values.appConfig.probes }}
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ include "smokeping.fullname" . }}-probes
+data:
+  probes: |
+    {{ .Values.appConfig.probes | nindent 4 }}
+{{- end }}
