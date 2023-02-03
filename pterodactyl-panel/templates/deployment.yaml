@@ -27,15 +27,29 @@ spec:
       serviceAccountName: {{ include "pterodactyl-panel.serviceAccountName" . }}
       securityContext:
         {{- toYaml .Values.podSecurityContext | nindent 8 }}
+      volumes:
+        - name: pterodactyl-panel-storage
+          persistentVolumeClaim:
+            claimName: {{ .Release.Name }}-pvc
       containers:
         - name: {{ .Chart.Name }}
           securityContext:
             {{- toYaml .Values.securityContext | nindent 12 }}
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
+          envFrom:
+            - configMapRef:
+                name: {{ .Release.Name }}-configmap
+            - secretRef:
+               name: {{ .Release.Name }}-{{ .Values.appConfig.appKey.secretName }}
+            - secretRef:
+                name: {{ .Release.Name }}-{{ .Values.appConfig.hashIds.secretName }}
+          volumeMounts:
+            - mountPath: /app/var/
+              name: pterodactyl-panel-storage
           ports:
             - name: http
-              containerPort: 80
+              containerPort: {{ .Values.service.port }}
               protocol: TCP
           livenessProbe:
             httpGet:
