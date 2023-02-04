@@ -23,6 +23,16 @@ entries:
   smokeping:
   - apiVersion: v2
     appVersion: 2.7.3
+    created: "2023-02-04T20:38:39.489685359Z"
+    description: A helm chart for smoke ping
+    digest: cc03fc9e495b4e450fcefb01862b5242f76e3fdb1c2dea026fc9ece0c91779a7
+    name: smokeping
+    type: application
+    urls:
+    - https://github.com/bancey/helm-charts/releases/download/smokeping-0.1.1/smokeping-0.1.1.tgz
+    version: 0.1.1
+  - apiVersion: v2
+    appVersion: 2.7.3
     created: "2023-02-03T22:21:26.673595873Z"
     description: A helm chart for smoke ping
     digest: 73de5c433f0355a5fc24e3186e47c06e486a28eed081bae0e1c7810601374825
@@ -31,4 +41,4 @@ entries:
     urls:
     - https://github.com/bancey/helm-charts/releases/download/smokeping-0.1.0/smokeping-0.1.0.tgz
     version: 0.1.0
-generated: "2023-02-03T22:21:26.673603673Z"
+generated: "2023-02-04T20:38:39.489692559Z"
