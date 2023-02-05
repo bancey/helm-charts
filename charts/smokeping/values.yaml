@@ -7,7 +7,7 @@ image:
 
 imagePullSecrets: []
 nameOverride: "smokeping"
-fullnameOverride: "smokeping-chart"
+fullnameOverride: "smokeping"
 
 serviceAccount:
   create: true
@@ -26,9 +26,7 @@ service:
 
 ingress:
   enabled: true
-  className: ""
-  annotations:
-    kubernetes.io/ingress.class: nginx
+  className: "nginx"
   hosts:
     - host: smokeping.local
       paths:

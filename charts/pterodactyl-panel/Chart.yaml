@@ -2,7 +2,7 @@ apiVersion: v2
 name: pterodactyl-panel
 description: A Helm chart for pterodactyl.io
 type: application
-version: 0.1.0
+version: 0.2.0
 appVersion: "v1.10.4"
 dependencies:
   - name: mariadb
