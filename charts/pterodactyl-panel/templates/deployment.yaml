@@ -30,7 +30,7 @@ spec:
       volumes:
         - name: pterodactyl-panel-storage
           persistentVolumeClaim:
-            claimName: {{ .Release.Name }}-pvc
+            claimName: {{ include "pterodactyl-panel.fullname" . }}-pvc
       containers:
         - name: {{ .Chart.Name }}
           securityContext:
