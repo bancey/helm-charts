@@ -32,18 +32,18 @@ spec:
           persistentVolumeClaim:
             claimName: {{ include "pterodactyl-panel.fullname" . }}-pvc
       containers:
-        - name: {{ .Chart.Name }}
+        - name: pterodactyl-panel
           securityContext:
             {{- toYaml .Values.securityContext | nindent 12 }}
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           envFrom:
             - configMapRef:
-                name: {{ .Release.Name }}-configmap
+                name: {{ include "pterodactyl-panel.fullname" . }}-configmap
             - secretRef:
-               name: {{ .Release.Name }}-{{ .Values.appConfig.appKey.secretName }}
+               name: {{ include "pterodactyl-panel.fullname" . }}-{{ .Values.appConfig.appKey.secretName }}
             - secretRef:
-                name: {{ .Release.Name }}-{{ .Values.appConfig.hashIds.secretName }}
+                name: {{ include "pterodactyl-panel.fullname" . }}-{{ .Values.appConfig.hashIds.secretName }}
           volumeMounts:
             - mountPath: /app/var/
               name: pterodactyl-panel-storage
