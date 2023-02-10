@@ -1,12 +1,9 @@
-name: Update Pages
+name: Publish Helm Charts
 
 on:
   push:
     branches:
       - develop
-    paths:
-      - charts/**
-      - .github/workflows/main.yml
 
 jobs:
   release:
@@ -21,8 +18,7 @@ jobs:
           git config user.name "$GITHUB_ACTOR"
           git config user.email "$GITHUB_ACTOR@users.noreply.github.com"
       - name: Helm Repo Add
-        run: |
-          helm repo add bitnami https://charts.bitnami.com/bitnami
+        run: helm repo add bitnami https://charts.bitnami.com/bitnami
       - name: Run chart-releaser
         uses: helm/chart-releaser-action@v1.5.0
         env:
