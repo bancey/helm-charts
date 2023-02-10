@@ -41,7 +41,7 @@ affinity: {}
 
 persistence:
   enabled: true
-  #storageClassName: "longhorn"
+  # storageClassName: "longhorn"
   size: "1Gi"
 
 appConfig:
