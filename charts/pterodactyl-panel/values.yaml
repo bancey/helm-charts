@@ -44,26 +44,26 @@ appConfig:
 mariadb:
   enabled: true
   # Set specific storage class for mariadb.
-  #global:
-  #  storageClass: "longhorn"
-  # Override base images used by bitnami/mariadb chart (the example below enables support for arm64)
-  #image:
-  #  digest: ''
-  #  registry: ghcr.io
-  #  repository: zcube/bitnami-compat/mariadb
-  #  tag: 10.9.4-debian-11-r54
-  #metrics:
-  #  image:
-  #    digest: ''
-  #    registry: ghcr.io
-  #    repository: zcube/bitnami-compat/mysqld-exporter
-  #    tag: 0.14.0-debian-11-r54
-  #volumePermissions:
-  #  image:
-  #    digest: ''
-  #    registry: ghcr.io
-  #    repository: zcube/bitnami-compat/bitnami-shell
-  #    tag: 11.0.0-debian-11-r54
+  # global:
+  #   storageClass: "longhorn"
+  #  Override base images used by bitnami/mariadb chart (the example below enables support for arm64)
+  # image:
+  #   digest: ''
+  #   registry: ghcr.io
+  #   repository: zcube/bitnami-compat/mariadb
+  #   tag: 10.9.4-debian-11-r54
+  # metrics:
+  #   image:
+  #     digest: ''
+  #     registry: ghcr.io
+  #     repository: zcube/bitnami-compat/mysqld-exporter
+  #     tag: 0.14.0-debian-11-r54
+  # volumePermissions:
+  #   image:
+  #     digest: ''
+  #     registry: ghcr.io
+  #     repository: zcube/bitnami-compat/bitnami-shell
+  #     tag: 11.0.0-debian-11-r54
   auth:
     database: pterodactyl-db
     username: pterodactyl-user
@@ -74,39 +74,39 @@ mariadb:
 # Wether we should use subchart for Redis. Set to false to enable external behaviour
 redis:
   enabled: true
-  # Set specific storage class for mariadb.
-  #global:
-  #  storageClass: "longhorn"
-  # Override base images used by bitnami/redis chart (the example below enables support for arm64)
-  #image:
-  #  digest: ""
-  #  registry: ghcr.io
-  #  repository: zcube/bitnami-compat/redis
-  #  tag: 7.0.8-debian-11-r54
-  #metrics:
-  #  image:
-  #    digest: ""
-  #    registry: ghcr.io
-  #    repository: zcube/bitnami-compat/redis-exporter
-  #    tag: 1.46.0-debian-11-r54
-  #sentinel:
-  #  image:
-  #    digest: ""
-  #    registry: ghcr.io
-  #    repository: zcube/bitnami-compat/redis-sentinel
-  #    tag: 7.0.8-debian-11-r54
-  #sysctl:
-  #  image:
-  #    digest: ""
-  #    registry: ghcr.io
-  #    repository: zcube/bitnami-compat/bitnami-shell
-  #    tag: 11.0.0-debian-11-r54
-  #volumePermissions:
-  #  image:
-  #    digest: ""
-  #    registry: ghcr.io
-  #    repository: zcube/bitnami-compat/bitnami-shell
-  #    tag: 11.0.0-debian-11-r54
+  #  Set specific storage class for mariadb.
+  # global:
+  #   storageClass: "longhorn"
+  #  Override base images used by bitnami/redis chart (the example below enables support for arm64)
+  # image:
+  #   digest: ""
+  #   registry: ghcr.io
+  #   repository: zcube/bitnami-compat/redis
+  #   tag: 7.0.8-debian-11-r54
+  # metrics:
+  #   image:
+  #     digest: ""
+  #     registry: ghcr.io
+  #     repository: zcube/bitnami-compat/redis-exporter
+  #     tag: 1.46.0-debian-11-r54
+  # sentinel:
+  #   image:
+  #     digest: ""
+  #     registry: ghcr.io
+  #     repository: zcube/bitnami-compat/redis-sentinel
+  #     tag: 7.0.8-debian-11-r54
+  # sysctl:
+  #   image:
+  #     digest: ""
+  #     registry: ghcr.io
+  #     repository: zcube/bitnami-compat/bitnami-shell
+  #     tag: 11.0.0-debian-11-r54
+  # volumePermissions:
+  #   image:
+  #     digest: ""
+  #     registry: ghcr.io
+  #     repository: zcube/bitnami-compat/bitnami-shell
+  #     tag: 11.0.0-debian-11-r54
   replica:
     replicaCount: 0
   auth:
@@ -123,7 +123,7 @@ persistence:
   type: pvc
   enabled: true
   # Set storage class otherwise default will be used.
-  #storageClassName: "longhorn"
+  # storageClassName: "longhorn"
   accessModes:
     - ReadWriteOnce
   size: 4Gi
