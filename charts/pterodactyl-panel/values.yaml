@@ -30,11 +30,6 @@ appConfig:
   queueConnection: "redis"
   maxFilesEditSize: "16000000"
   trustedProxies: ""
-  #s3:
-  #  region: de
-  #  bucket: rustme-backups
-  #  endpoint: https://s3.de.cloud.ovh.net
-  #  secretName: "s3-secrets"
   appKey:
     secretName: "app-key-secrets"
   hashIds:
