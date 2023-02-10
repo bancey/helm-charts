@@ -14,7 +14,7 @@ data:
   LOG_CHANNEL: {{ .Values.appConfig.logChannel }}
   APP_LOCALE: {{ .Values.appConfig.locale }}
   {{- if .Values.mariadb.enabled }}
-  DB_HOST: {{ .Release.Name }}-mariadb
+  DB_HOST: {{ .Release.Name }}-mariadb-0
   {{- else }}
   DB_HOST: {{ .Values.mariadb.auth.host | quote }}
   {{- end }}
@@ -22,6 +22,7 @@ data:
   DB_DATABASE: {{ .Values.mariadb.auth.database }}
   DB_USERNAME: {{ .Values.mariadb.auth.username }}
   DB_PASSWORD: {{ .Values.mariadb.auth.password }}
+  {{- if .Values.appConfig.mailSecretRef }}
   MAIL_DRIVER: {{ .Values.appConfig.mail.driver }}
   MAIL_HOST: {{ .Values.appConfig.mail.host }}
   MAIL_PORT: {{ .Values.appConfig.mail.port | quote }}
@@ -29,6 +30,7 @@ data:
   MAIL_PASSWORD: {{ .Values.appConfig.mail.password }}
   MAIL_ENCRYPTION: {{ .Values.appConfig.mail.encryption }}
   MAIL_FROM: {{ .Values.appConfig.mail.from }}
+  {{- end }}
   QUEUE_HIGH: {{ .Values.appConfig.queue.high }} 
   QUEUE_STANDARD: {{ .Values.appConfig.queue.standart }} 
   QUEUE_LOW: {{ .Values.appConfig.queue.low }} 
@@ -37,7 +39,7 @@ data:
   SESSION_DRIVER: {{ .Values.appConfig.sessionDriver }}  
   QUEUE_CONNECTION: {{ .Values.appConfig.queueConnection }}
   {{- if .Values.redis.enabled }}
-  REDIS_HOST: {{ .Release.Name }}-redis-master
+  REDIS_HOST: {{ .Release.Name }}-redis-master-0
   {{- else }}
   REDIS_HOST: {{ .Values.redis.auth.host | quote }}
   {{- end }}
