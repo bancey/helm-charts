@@ -1,7 +1,6 @@
 name: Lint Helm Charts
 
 on:
-  push:
   pull_request:
 
 jobs:
