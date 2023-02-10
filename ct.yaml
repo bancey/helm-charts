@@ -1,0 +1,7 @@
+chart-dirs:
+  - charts
+helm-extra-args: --timeout 600
+check-version-increment: true
+validate-maintainers: false
+target-branch: develop
+debug: true
