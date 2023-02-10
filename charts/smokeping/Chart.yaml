@@ -2,5 +2,12 @@ apiVersion: v2
 name: smokeping
 description: A helm chart for smoke ping
 type: application
+icon: "https://cdn.pterodactyl.io/logos/new/pterodactyl_logo_transparent.png"
 version: 0.2.0
 appVersion: "2.7.3"
+sources:
+  - "https://github.com/bancey/helm-charts"
+  - "https://github.com/pterodactyl/panel"
+maintainers:
+  - name: bancey
+    url: https://github.com/bancey

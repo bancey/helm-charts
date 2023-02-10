@@ -3,7 +3,10 @@ name: pterodactyl-panel
 description: A Helm chart for pterodactyl.io
 type: application
 version: 0.3.2
-appVersion: "v1.10.4"
+appVersion: "v1.11.3"
+maintainers:
+  - name: bancey
+    email: abance@bancey.xyz
 dependencies:
   - name: mariadb
     version: "11.3.5"
