@@ -44,6 +44,10 @@ spec:
                name: {{ include "pterodactyl-panel.fullname" . }}-{{ .Values.appConfig.appKey.secretName }}
             - secretRef:
                 name: {{ include "pterodactyl-panel.fullname" . }}-{{ .Values.appConfig.hashIds.secretName }}
+            {{- if .Values.appConfig.mailSecretRef }}
+            - secretRef:
+                name: {{ .Values.appConfig.mailSecretRef }}
+            {{- end }}
           volumeMounts:
             - mountPath: /app/var/
               name: pterodactyl-panel-storage
