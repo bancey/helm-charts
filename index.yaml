@@ -2,6 +2,26 @@ apiVersion: v1
 entries:
   pterodactyl-panel:
   - apiVersion: v2
+    appVersion: v1.11.3
+    created: "2023-02-12T17:08:28.522852896Z"
+    dependencies:
+    - condition: mariadb.enabled
+      name: mariadb
+      repository: https://charts.bitnami.com/bitnami
+      version: 11.3.5
+    - condition: redis.enabled
+      name: redis
+      repository: https://charts.bitnami.com/bitnami
+      version: 17.3.11
+    description: A Helm chart for pterodactyl.io
+    digest: 08f567c3d18e95dc4a7892251b5ed55d7362dfc75614c94fe3088777474fea7d
+    icon: https://cdn.pterodactyl.io/logos/new/pterodactyl_logo_transparent.png
+    name: pterodactyl-panel
+    type: application
+    urls:
+    - https://github.com/bancey/helm-charts/releases/download/pterodactyl-panel-0.3.2/pterodactyl-panel-0.3.2.tgz
+    version: 0.3.2
+  - apiVersion: v2
     appVersion: v1.10.4
     created: "2023-02-06T20:48:40.750824882Z"
     dependencies:
@@ -80,6 +100,20 @@ entries:
   smokeping:
   - apiVersion: v2
     appVersion: 2.7.3
+    created: "2023-02-12T17:08:28.670012035Z"
+    description: A helm chart for smoke ping
+    digest: 54f67f703da2a357dc2f291cdbd2d157e5cdbf4ee5c436448bcfe1f9bd381472
+    icon: https://artifacthub.io/image/24cab467-04b9-412a-b32d-38702d42735a@3x
+    name: smokeping
+    sources:
+    - https://github.com/bancey/helm-charts
+    - https://github.com/pterodactyl/panel
+    type: application
+    urls:
+    - https://github.com/bancey/helm-charts/releases/download/smokeping-0.2.1/smokeping-0.2.1.tgz
+    version: 0.2.1
+  - apiVersion: v2
+    appVersion: 2.7.3
     created: "2023-02-05T20:40:39.989515542Z"
     description: A helm chart for smoke ping
     digest: 887780a9326a5d0cd75a1d6a23b43f6e3f48eef3348672f1643e3d5f2e23072a
@@ -108,4 +142,4 @@ entries:
     urls:
     - https://github.com/bancey/helm-charts/releases/download/smokeping-0.1.0/smokeping-0.1.0.tgz
     version: 0.1.0
-generated: "2023-02-06T20:48:40.750977083Z"
+generated: "2023-02-12T17:08:28.670126836Z"
