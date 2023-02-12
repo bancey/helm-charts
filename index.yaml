@@ -3,6 +3,26 @@ entries:
   pterodactyl-panel:
   - apiVersion: v2
     appVersion: v1.11.3
+    created: "2023-02-12T17:55:29.299451114Z"
+    dependencies:
+    - condition: mariadb.enabled
+      name: mariadb
+      repository: https://charts.bitnami.com/bitnami
+      version: 11.4.6
+    - condition: redis.enabled
+      name: redis
+      repository: https://charts.bitnami.com/bitnami
+      version: 17.7.3
+    description: A Helm chart for pterodactyl.io
+    digest: 208c988c4ae440efc9bea1f997211acfbee283fa3423d75be55eb5d0b6d936a4
+    icon: https://cdn.pterodactyl.io/logos/new/pterodactyl_logo_transparent.png
+    name: pterodactyl-panel
+    type: application
+    urls:
+    - https://github.com/bancey/helm-charts/releases/download/pterodactyl-panel-0.3.4/pterodactyl-panel-0.3.4.tgz
+    version: 0.3.4
+  - apiVersion: v2
+    appVersion: v1.11.3
     created: "2023-02-12T17:08:28.522852896Z"
     dependencies:
     - condition: mariadb.enabled
@@ -142,4 +162,4 @@ entries:
     urls:
     - https://github.com/bancey/helm-charts/releases/download/smokeping-0.1.0/smokeping-0.1.0.tgz
     version: 0.1.0
-generated: "2023-02-12T17:08:28.670126836Z"
+generated: "2023-02-12T17:55:29.299478016Z"
