@@ -28,14 +28,12 @@ jobs:
       - name: Set up chart-testing
         uses: helm/chart-testing-action@v2.3.1
 
-      - name: debug
-        run: ct list-changed --config ct.yaml
-
-      - name: Run chart-testing (list-changed)
+      - name: List changed charts
         id: list-changed
         run: |
           changed=$(ct list-changed --config ct.yaml)
           if [[ -n "$changed" ]]; then
+            echo $changed
             echo "changed=true" >> $GITHUB_OUTPUT
           else
             echo "changed=false" >> $GITHUB_OUTPUT
