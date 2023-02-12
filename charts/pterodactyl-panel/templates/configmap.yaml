@@ -14,7 +14,7 @@ data:
   LOG_CHANNEL: {{ .Values.appConfig.logChannel }}
   APP_LOCALE: {{ .Values.appConfig.locale }}
   {{- if .Values.mariadb.enabled }}
-  DB_HOST: {{ .Release.Name }}-mariadb-0
+  DB_HOST: {{ .Release.Name }}-mariadb
   {{- else }}
   DB_HOST: {{ .Values.mariadb.auth.host | quote }}
   {{- end }}
@@ -39,7 +39,7 @@ data:
   SESSION_DRIVER: {{ .Values.appConfig.sessionDriver }}  
   QUEUE_CONNECTION: {{ .Values.appConfig.queueConnection }}
   {{- if .Values.redis.enabled }}
-  REDIS_HOST: {{ .Release.Name }}-redis-master-0
+  REDIS_HOST: {{ .Release.Name }}-redis-master
   {{- else }}
   REDIS_HOST: {{ .Values.redis.auth.host | quote }}
   {{- end }}
