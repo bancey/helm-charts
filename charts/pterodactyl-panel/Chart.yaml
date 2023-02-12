@@ -11,6 +11,6 @@ dependencies:
     condition: mariadb.enabled
     repository: "https://charts.bitnami.com/bitnami"
   - name: redis
-    version: "17.3.11"
+    version: "17.7.3"
     condition: redis.enabled
     repository: "https://charts.bitnami.com/bitnami"
