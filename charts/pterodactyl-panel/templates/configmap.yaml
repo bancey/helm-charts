@@ -6,13 +6,12 @@ data:
   APP_URL: {{ .Values.appConfig.url }}
   APP_ENV: {{ .Values.appConfig.env }}
   APP_DEBUG: {{ .Values.appConfig.debug | quote }}
-  APP_THEME: {{ .Values.appConfig.theme }}
   APP_TIMEZONE: {{ .Values.appConfig.timezone }}
-  APP_CLEAR_TASKLOG: {{ .Values.appConfig.clearTaskLog | quote }}
-  APP_DELETE_MINUTES: {{ .Values.appConfig.deleteMinutes | quote }}
   APP_ENVIRONMENT_ONLY: "true"
   LOG_CHANNEL: {{ .Values.appConfig.logChannel }}
+  LOG_LEVEL: {{ .Values.appConfig.logLevel }}
   APP_LOCALE: {{ .Values.appConfig.locale }}
+  APP_SERVICE_AUTHOR: {{ .Values.appConfig.appServiceAuthor }} 
   {{- if .Values.mariadb.enabled }}
   DB_HOST: {{ .Release.Name }}-mariadb
   {{- else }}
@@ -32,9 +31,8 @@ data:
   MAIL_FROM: {{ .Values.appConfig.mail.from }}
   {{- end }}
   QUEUE_HIGH: {{ .Values.appConfig.queue.high }} 
-  QUEUE_STANDARD: {{ .Values.appConfig.queue.standart }} 
+  QUEUE_STANDARD: {{ .Values.appConfig.queue.standard }} 
   QUEUE_LOW: {{ .Values.appConfig.queue.low }} 
-  APP_SERVICE_AUTHOR: {{ .Values.appConfig.queue.standart }} 
   CACHE_DRIVER: {{ .Values.appConfig.cacheDriver }} 
   SESSION_DRIVER: {{ .Values.appConfig.sessionDriver }}  
   QUEUE_CONNECTION: {{ .Values.appConfig.queueConnection }}
