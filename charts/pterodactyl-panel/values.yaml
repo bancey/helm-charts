@@ -47,7 +47,7 @@ mariadb:
   #   digest: ''
   #   registry: ghcr.io
   #   repository: zcube/bitnami-compat/mariadb
-  #   tag: 10.9.4-debian-11-r54
+  #   tag: 10.5-debian-11-r55
   # metrics:
   #   image:
   #     digest: ''
@@ -61,7 +61,7 @@ mariadb:
   #     repository: zcube/bitnami-compat/bitnami-shell
   #     tag: 11.0.0-debian-11-r54
   auth:
-    database: pterodactyl-db
+    database: panel
     username: pterodactyl-user
     host: 127.0.0.1
     port: 3306
