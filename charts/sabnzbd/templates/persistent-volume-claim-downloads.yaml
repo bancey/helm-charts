@@ -1,0 +1,17 @@
+{{- if and .Values.persistence.downloads.enabled (not .Values.persistence.downloads.claimName) }}
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: {{ include "sabnzbd.fullname" . }}-downloads
+  labels:
+    {{- include "sabnzbd.labels" . | nindent 4 }}
+spec:
+  accessModes:
+    - ReadWriteOnce
+  {{- if .Values.persistence.downloads.storageClass }}
+  storageClassName: {{ .Values.persistence.downloads.storageClass }}
+  {{- end }}
+  resources:
+    requests:
+      storage: {{ .Values.persistence.downloads.size }}
+{{- end }}

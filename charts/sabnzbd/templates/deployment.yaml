@@ -5,9 +5,7 @@ metadata:
   labels:
     {{- include "sabnzbd.labels" . | nindent 4 }}
 spec:
-  {{- if not .Values.autoscaling.enabled }}
   replicas: {{ .Values.replicaCount }}
-  {{- end }}
   selector:
     matchLabels:
       {{- include "sabnzbd.selectorLabels" . | nindent 6 }}
@@ -24,7 +22,6 @@ spec:
       imagePullSecrets:
         {{- toYaml . | nindent 8 }}
       {{- end }}
-      serviceAccountName: {{ include "sabnzbd.serviceAccountName" . }}
       securityContext:
         {{- toYaml .Values.podSecurityContext | nindent 8 }}
       containers:
@@ -35,7 +32,7 @@ spec:
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           ports:
             - name: http
-              containerPort: 80
+              containerPort: 8080
               protocol: TCP
           livenessProbe:
             httpGet:
@@ -47,6 +44,26 @@ spec:
               port: http
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
+          volumeMounts:
+            - name: config
+              mountPath: /config
+            - name: downloads
+              mountPath: /downloads
+      volumes:
+        - name: config
+          persistentVolumeClaim:
+            {{- if .Values.persistence.config.claimName }}            
+            claimName: {{ .Values.persistence.config.claimName }}
+            {{- else }}
+            claimName: {{ include "sabnzbd.fullname" . }}-config
+            {{- end }}
+        - name: downloads
+          persistentVolumeClaim:
+            {{- if .Values.persistence.downloads.claimName }}            
+            claimName: {{ .Values.persistence.downloads.claimName }}
+            {{- else }}
+            claimName: {{ include "sabnzbd.fullname" . }}-downloads
+            {{- end }}
       {{- with .Values.nodeSelector }}
       nodeSelector:
         {{- toYaml . | nindent 8 }}
