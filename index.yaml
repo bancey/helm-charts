@@ -3,6 +3,26 @@ entries:
   pterodactyl-panel:
   - apiVersion: v2
     appVersion: v1.11.3
+    created: "2023-04-10T15:43:15.456013442Z"
+    dependencies:
+    - condition: mariadb.enabled
+      name: mariadb
+      repository: https://charts.bitnami.com/bitnami
+      version: 11.4.6
+    - condition: redis.enabled
+      name: redis
+      repository: https://charts.bitnami.com/bitnami
+      version: 17.7.3
+    description: A Helm chart for pterodactyl.io
+    digest: 2dcab68b18a3eca12939efe7f86b9b5af3ebf5f8767e945c28ccd7af71351e29
+    icon: https://cdn.pterodactyl.io/logos/new/pterodactyl_logo_transparent.png
+    name: pterodactyl-panel
+    type: application
+    urls:
+    - https://github.com/bancey/helm-charts/releases/download/pterodactyl-panel-0.3.6/pterodactyl-panel-0.3.6.tgz
+    version: 0.3.6
+  - apiVersion: v2
+    appVersion: v1.11.3
     created: "2023-02-13T14:56:20.935198084Z"
     dependencies:
     - condition: mariadb.enabled
@@ -207,4 +227,4 @@ entries:
     urls:
     - https://github.com/bancey/helm-charts/releases/download/xarr-0.1.0/xarr-0.1.0.tgz
     version: 0.1.0
-generated: "2023-03-31T17:42:34.804891249Z"
+generated: "2023-04-10T15:43:15.456200244Z"
