@@ -30,7 +30,11 @@ spec:
       volumes:
         - name: pterodactyl-panel-storage
           persistentVolumeClaim:
+            {{- if .Values.persistence.existingClaim }}
+            claimName: {{ .Values.persistence.existingClaim | quote }}
+            {{- else }}
             claimName: {{ include "pterodactyl-panel.fullname" . }}-pvc
+            {{- end }}
       containers:
         - name: pterodactyl-panel
           securityContext:
