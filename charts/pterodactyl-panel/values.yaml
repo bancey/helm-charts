@@ -125,6 +125,7 @@ persistence:
   finalizers:
     - kubernetes.io/pvc-protection
   extraPvcLabels: {}
+  existingClaim:
 
   ## If persistence is not enabled, this allows to mount the
   ## local storage in-memory to improve performance
