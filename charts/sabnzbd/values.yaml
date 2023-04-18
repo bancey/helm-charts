@@ -12,6 +12,16 @@ fullnameOverride: ""
 
 podAnnotations: {}
 
+probes:
+  livenessProbe:
+    timeoutSeconds: 15
+    periodSeconds: 45
+    initialDelaySeconds: 30
+  readinessProbe:
+    timeoutSeconds: 15
+    periodSeconds: 45
+    initialDelaySeconds: 30
+
 podSecurityContext:
   {}
   # fsGroup: 2000

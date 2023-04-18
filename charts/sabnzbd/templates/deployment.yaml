@@ -38,10 +38,16 @@ spec:
             httpGet:
               path: /
               port: http
+            initialDelaySeconds: {{ .Values.probes.livenessProbe.initialDelaySeconds }}
+            timeoutSeconds: {{ .Values.probes.livenessProbe.timeoutSeconds }}
+            periodSeconds: {{ .Values.probes.livenessProbe.periodSeconds }}
           readinessProbe:
             httpGet:
               path: /
               port: http
+            initialDelaySeconds: {{ .Values.probes.readinessProbe.initialDelaySeconds }}
+            timeoutSeconds: {{ .Values.probes.readinessProbe.timeoutSeconds }}
+            periodSeconds: {{ .Values.probes.readinessProbe.periodSeconds }}
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
           volumeMounts:
