@@ -160,6 +160,17 @@ entries:
   sabnzbd:
   - apiVersion: v2
     appVersion: 3.7.2
+    created: "2023-04-18T14:27:40.266986888Z"
+    description: A Helm chart for SABnzbd.
+    digest: b85bca12257ca6d580bfa286117e98febaa405a5189be7714346179bfce13723
+    icon: https://sabnzbd.org/images/logo-full.svg
+    name: sabnzbd
+    type: application
+    urls:
+    - https://github.com/bancey/helm-charts/releases/download/sabnzbd-0.1.1/sabnzbd-0.1.1.tgz
+    version: 0.1.1
+  - apiVersion: v2
+    appVersion: 3.7.2
     created: "2023-03-31T17:42:34.59535693Z"
     description: A Helm chart for SABnzbd.
     digest: 080f94790d39d3f454a400dd3511a3e87bd55ff05469bc1389e4d865ae6ee3dd
@@ -227,4 +238,4 @@ entries:
     urls:
     - https://github.com/bancey/helm-charts/releases/download/xarr-0.1.0/xarr-0.1.0.tgz
     version: 0.1.0
-generated: "2023-04-10T15:43:15.456200244Z"
+generated: "2023-04-18T14:27:40.267008388Z"
