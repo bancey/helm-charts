@@ -183,6 +183,20 @@ entries:
   smokeping:
   - apiVersion: v2
     appVersion: 2.7.3
+    created: "2023-05-06T19:23:54.456833657Z"
+    description: A helm chart for smoke ping
+    digest: 3203cb8a0f3fca3b4d50fcbcbf9f388b7c60f2e6a41978fa01a49c55eb8d961d
+    icon: https://artifacthub.io/image/24cab467-04b9-412a-b32d-38702d42735a@3x
+    name: smokeping
+    sources:
+    - https://github.com/bancey/helm-charts
+    - https://github.com/pterodactyl/panel
+    type: application
+    urls:
+    - https://github.com/bancey/helm-charts/releases/download/smokeping-0.2.2/smokeping-0.2.2.tgz
+    version: 0.2.2
+  - apiVersion: v2
+    appVersion: 2.7.3
     created: "2023-02-12T17:08:28.670012035Z"
     description: A helm chart for smoke ping
     digest: 54f67f703da2a357dc2f291cdbd2d157e5cdbf4ee5c436448bcfe1f9bd381472
@@ -238,4 +252,4 @@ entries:
     urls:
     - https://github.com/bancey/helm-charts/releases/download/xarr-0.1.0/xarr-0.1.0.tgz
     version: 0.1.0
-generated: "2023-04-18T14:27:40.267008388Z"
+generated: "2023-05-06T19:23:54.45689936Z"
