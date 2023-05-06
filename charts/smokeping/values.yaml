@@ -43,6 +43,8 @@ persistence:
   enabled: true
   # storageClassName: "longhorn"
   size: "1Gi"
+  accessModes:
+    - ReadWriteOnce
 
 appConfig:
   probes: |
