@@ -7,7 +7,7 @@ version: 0.3.6
 appVersion: "v1.11.3"
 dependencies:
   - name: mariadb
-    version: "11.4.6"
+    version: "16.5.0"
     condition: mariadb.enabled
     repository: "https://charts.bitnami.com/bitnami"
   - name: redis
