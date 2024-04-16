@@ -39,10 +39,12 @@ spec:
             httpGet:
               path: /
               port: http
+            timeoutSeconds: {{ .Values.probes.liveness.timeout }}
           readinessProbe:
             httpGet:
               path: /
               port: http
+            timeoutSeconds: {{ .Values.probes.readiness.timeout }}
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
           volumeMounts:

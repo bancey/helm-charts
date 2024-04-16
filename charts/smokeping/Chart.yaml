@@ -7,4 +7,5 @@ version: 0.3.0
 appVersion: "2.8.2"
 sources:
   - "https://github.com/bancey/helm-charts"
-  - "https://github.com/pterodactyl/panel"
+  - "https://github.com/linuxserver/docker-smokeping"
+  - "https://oss.oetiker.ch/smokeping/"

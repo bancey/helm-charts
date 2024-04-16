@@ -9,6 +9,12 @@ imagePullSecrets: []
 nameOverride: "smokeping"
 fullnameOverride: "smokeping"
 
+probes:
+  liveness:
+    timeout: 5
+  readiness:
+    timeout: 5
+
 serviceAccount:
   create: true
   annotations: {}
