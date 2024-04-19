@@ -2,6 +2,25 @@ apiVersion: v1
 entries:
   pterodactyl-panel:
   - apiVersion: v2
+    created: "2024-04-19T19:46:32.319351242Z"
+    dependencies:
+    - condition: mariadb.enabled
+      name: mariadb
+      repository: https://charts.bitnami.com/bitnami
+      version: 11.4.6
+    - condition: redis.enabled
+      name: redis
+      repository: https://charts.bitnami.com/bitnami
+      version: 17.7.3
+    description: A Helm chart for pterodactyl.io
+    digest: 65e4af7da2c4e7451c6f9b28af1a17e754a4a0c94aacdf9b5afefd9f13a56dbe
+    icon: https://cdn.pterodactyl.io/logos/new/pterodactyl_logo_transparent.png
+    name: pterodactyl-panel
+    type: application
+    urls:
+    - https://github.com/bancey/helm-charts/releases/download/pterodactyl-panel-0.4.0/pterodactyl-panel-0.4.0.tgz
+    version: 0.4.0
+  - apiVersion: v2
     appVersion: v1.11.3
     created: "2023-04-10T15:43:15.456013442Z"
     dependencies:
@@ -159,6 +178,16 @@ entries:
     version: 0.1.0
   sabnzbd:
   - apiVersion: v2
+    created: "2024-04-19T19:46:32.443226307Z"
+    description: A Helm chart for SABnzbd.
+    digest: 5ab61e41edcfab41b07048c345ab843043d3d0aaa4747d4141ed989624423b40
+    icon: https://sabnzbd.org/images/logo-full.svg
+    name: sabnzbd
+    type: application
+    urls:
+    - https://github.com/bancey/helm-charts/releases/download/sabnzbd-0.3.0/sabnzbd-0.3.0.tgz
+    version: 0.3.0
+  - apiVersion: v2
     appVersion: 4.1.0-ls132
     created: "2023-10-26T09:31:48.56037954Z"
     description: A Helm chart for SABnzbd.
@@ -192,6 +221,20 @@ entries:
     - https://github.com/bancey/helm-charts/releases/download/sabnzbd-0.1.0/sabnzbd-0.1.0.tgz
     version: 0.1.0
   smokeping:
+  - apiVersion: v2
+    created: "2024-04-19T19:46:32.550688097Z"
+    description: A helm chart for smoke ping
+    digest: 7aebfbc8af91f559cc49072c7b0863a93f1c021eda6d975123d8f1fdcb343d13
+    icon: https://artifacthub.io/image/24cab467-04b9-412a-b32d-38702d42735a@3x
+    name: smokeping
+    sources:
+    - https://github.com/bancey/helm-charts
+    - https://github.com/linuxserver/docker-smokeping
+    - https://oss.oetiker.ch/smokeping/
+    type: application
+    urls:
+    - https://github.com/bancey/helm-charts/releases/download/smokeping-0.4.0/smokeping-0.4.0.tgz
+    version: 0.4.0
   - apiVersion: v2
     appVersion: 2.8.2
     created: "2024-04-16T15:49:10.785059622Z"
@@ -281,6 +324,17 @@ entries:
     version: 0.1.0
   xarr:
   - apiVersion: v2
+    created: "2024-04-19T19:46:32.665406648Z"
+    description: A helm chart for deploying any of the *arr apps on Kubernetes, specifically
+      Sonarr, Radarr and Lidarr.
+    digest: 8499c34b04bfb016ec90c636793b6bd5e35f2e61791d24f916b6639812e6664f
+    icon: https://store-images.s-microsoft.com/image/apps.39677.e18fb5e2-7120-410b-90c4-90fcac73a4e3.a453a967-665c-460b-b449-7dfc5e3ee9dc.29b3484d-1c93-4db8-9746-450ff2dc428c?mode=scale&h=100&q=90&w=100
+    name: xarr
+    type: application
+    urls:
+    - https://github.com/bancey/helm-charts/releases/download/xarr-0.2.0/xarr-0.2.0.tgz
+    version: 0.2.0
+  - apiVersion: v2
     appVersion: latest
     created: "2023-03-31T17:42:34.804865649Z"
     description: A helm chart for deploying any of the *arr apps on Kubernetes, specifically
@@ -292,4 +346,4 @@ entries:
     urls:
     - https://github.com/bancey/helm-charts/releases/download/xarr-0.1.0/xarr-0.1.0.tgz
     version: 0.1.0
-generated: "2024-04-16T15:49:10.785116089Z"
+generated: "2024-04-19T19:46:32.665510441Z"
