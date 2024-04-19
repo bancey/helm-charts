@@ -3,13 +3,13 @@ name: pterodactyl-panel
 description: A Helm chart for pterodactyl.io
 type: application
 icon: "https://cdn.pterodactyl.io/logos/new/pterodactyl_logo_transparent.png"
-version: 0.4.1
+version: 0.4.2
 dependencies:
   - name: mariadb
     version: "18.0.2"
     condition: mariadb.enabled
     repository: "https://charts.bitnami.com/bitnami"
   - name: redis
-    version: "17.7.3"
+    version: "19.1.2"
     condition: redis.enabled
     repository: "https://charts.bitnami.com/bitnami"
