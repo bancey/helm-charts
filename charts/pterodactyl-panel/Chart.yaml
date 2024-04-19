@@ -3,7 +3,7 @@ name: pterodactyl-panel
 description: A Helm chart for pterodactyl.io
 type: application
 icon: "https://cdn.pterodactyl.io/logos/new/pterodactyl_logo_transparent.png"
-version: 0.4.0
+version: 0.4.1
 dependencies:
   - name: mariadb
     version: "18.0.2"
