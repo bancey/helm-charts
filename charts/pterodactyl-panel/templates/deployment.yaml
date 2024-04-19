@@ -40,7 +40,7 @@ spec:
           securityContext:
             {{- toYaml .Values.securityContext | nindent 12 }}
           image: "{{ .Values.image }}"
-          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          imagePullPolicy: {{ .Values.imagePullPolicy }}
           envFrom:
             - configMapRef:
                 name: {{ include "pterodactyl-panel.fullname" . }}-configmap

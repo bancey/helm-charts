@@ -141,6 +141,7 @@ persistence:
 replicaCount: 1
 
 image: ghcr.io/pterodactyl/panel:v1.11.3
+imagePullPolicy: IfNotPresent
 
 imagePullSecrets: []
 nameOverride: ""

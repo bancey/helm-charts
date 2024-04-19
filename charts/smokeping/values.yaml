@@ -1,6 +1,7 @@
 replicaCount: 1
 
 image: linuxserver/smokeping:2.8.2
+imagePullPolicy: IfNotPresent
 
 imagePullSecrets: []
 nameOverride: "smokeping"

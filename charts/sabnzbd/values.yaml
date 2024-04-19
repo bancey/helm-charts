@@ -1,6 +1,7 @@
 replicaCount: 1
 
 image: lscr.io/linuxserver/sabnzbd:4.2.3-ls157
+imagePullPolicy: IfNotPresent
 
 imagePullSecrets: []
 nameOverride: ""
