@@ -6,7 +6,7 @@ icon: "https://cdn.pterodactyl.io/logos/new/pterodactyl_logo_transparent.png"
 version: 0.4.0
 dependencies:
   - name: mariadb
-    version: "11.4.6"
+    version: "18.0.2"
     condition: mariadb.enabled
     repository: "https://charts.bitnami.com/bitnami"
   - name: redis
