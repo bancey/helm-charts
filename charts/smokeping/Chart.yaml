@@ -3,7 +3,7 @@ name: smokeping
 description: A helm chart for smoke ping
 type: application
 icon: "https://artifacthub.io/image/24cab467-04b9-412a-b32d-38702d42735a@3x"
-version: 0.3.1
+version: 0.4.0
 appVersion: "2.8.2"
 sources:
   - "https://github.com/bancey/helm-charts"

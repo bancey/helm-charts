@@ -1,9 +1,6 @@
 replicaCount: 1
 
-image:
-  repository: linuxserver/smokeping
-  pullPolicy: IfNotPresent
-  tag: ""
+image: linuxserver/smokeping:2.8.2
 
 imagePullSecrets: []
 nameOverride: "smokeping"
