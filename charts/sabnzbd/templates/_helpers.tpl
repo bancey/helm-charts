@@ -36,8 +36,8 @@ Common labels
 {{- define "sabnzbd.labels" -}}
 helm.sh/chart: {{ include "sabnzbd.chart" . }}
 {{ include "sabnzbd.selectorLabels" . }}
-{{- if .Chart.AppVersion }}
-app.kubernetes.io/version: {{ .Chart.AppVersion | quote }}
+{{- if .Values.image }}
+app.kubernetes.io/version: {{ (split ":" .Values.image)._1 | quote }}
 {{- end }}
 app.kubernetes.io/managed-by: {{ .Release.Service }}
 {{- end }}

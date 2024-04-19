@@ -3,5 +3,4 @@ name: xarr
 description: A helm chart for deploying any of the *arr apps on Kubernetes, specifically Sonarr, Radarr and Lidarr.
 type: application
 icon: "https://store-images.s-microsoft.com/image/apps.39677.e18fb5e2-7120-410b-90c4-90fcac73a4e3.a453a967-665c-460b-b449-7dfc5e3ee9dc.29b3484d-1c93-4db8-9746-450ff2dc428c?mode=scale&h=100&q=90&w=100"
-version: 0.1.0
-appVersion: "latest"
+version: 0.2.0
