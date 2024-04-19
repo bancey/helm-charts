@@ -3,5 +3,4 @@ name: sabnzbd
 description: A Helm chart for SABnzbd.
 type: application
 icon: https://sabnzbd.org/images/logo-full.svg
-version: 0.2.0
-appVersion: "4.1.0-ls132"
+version: 0.3.0

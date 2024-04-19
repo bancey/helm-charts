@@ -36,8 +36,8 @@ Common labels
 {{- define "pterodactyl-panel.labels" -}}
 helm.sh/chart: {{ include "pterodactyl-panel.chart" . }}
 {{ include "pterodactyl-panel.selectorLabels" . }}
-{{- if .Chart.AppVersion }}
-app.kubernetes.io/version: {{ .Chart.AppVersion | quote }}
+{{- if .Values.image }}
+app.kubernetes.io/version: {{ (split ":" .Values.image)._1 | quote }}
 {{- end }}
 app.kubernetes.io/managed-by: {{ .Release.Service }}
 {{- end }}
