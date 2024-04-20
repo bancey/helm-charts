@@ -140,7 +140,7 @@ persistence:
 
 replicaCount: 1
 
-image: ghcr.io/pterodactyl/panel:v1.11.3
+image: ghcr.io/pterodactyl/panel:latest
 imagePullPolicy: IfNotPresent
 
 imagePullSecrets: []
