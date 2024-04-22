@@ -40,7 +40,7 @@ spec:
             - name: PENPOT_SECRET_KEY
               {{ if .Value.config.apiSecret }}
               value: {{ .Values.config.apiSecret | quote }}
-              {{ else if .Values.config.apiExistingSecret && .Values.config.apiSecretKey }}
+              {{ else if (.Values.config.apiExistingSecret && .Values.config.apiSecretKey) }}
               valueFrom:
                 secretKeyRef:
                   name: {{ .Values.config.apiExistingSecret }}
