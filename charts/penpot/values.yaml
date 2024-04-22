@@ -263,7 +263,7 @@ config:
   ##
   publicURI: "http://localhost:8080"
   flags: "enable-registration enable-login disable-demo-users disable-demo-warning"
-  apiSecret: ""
+  apiSecret: "youshouldreallychangethis"
   apiExistingSecret: ""
   apiSecretKey: ""
   ## @param config.postgresql.host The PostgreSQL host to connect to.
