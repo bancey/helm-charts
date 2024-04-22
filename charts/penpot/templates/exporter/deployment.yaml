@@ -38,7 +38,7 @@ spec:
             - name: PENPOT_FLAGS
               value: "$PENPOT_FLAGS {{ .Values.config.flags }}"
             - name: PENPOT_SECRET_KEY
-              {{ if .Value.config.apiSecret }}
+              {{ if .Values.config.apiSecret }}
               value: {{ .Values.config.apiSecret | quote }}
               {{ else if and .Values.config.apiExistingSecret .Values.config.apiSecretKey }}
               valueFrom:
