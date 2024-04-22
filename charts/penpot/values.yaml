@@ -165,8 +165,7 @@ frontend:
 exporter:
   ## @param exporter.image The image to use for the exporter.
   ##
-  image:
-    repository: penpotapp/exporter:2.0.1
+  image: penpotapp/exporter:2.0.1
   ## @param exporter.replicaCount The number of replicas to deploy.
   ##
   replicaCount: 1
