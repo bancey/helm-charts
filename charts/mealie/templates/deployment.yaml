@@ -35,22 +35,22 @@ spec:
           image: "{{ .Values.image }}"
           imagePullPolicy: {{ .Values.global.imagePullPolicy }}
           env:
-            - name: ALLOW_SIGNUP:
-              value: {{ .Values.config.allowSignup | quote }}
-            - name: PUID:
-              value: {{ .Values.config.puid | quote }}
-            - name: PGID:
-              value: {{ .Values.config.pgid | quote }}
-            - name: TZ:
+            - name: ALLOW_SIGNUP
+              value: {{ .Values.config.allowSignup }}
+            - name: PUID
+              value: {{ .Values.config.puid }}
+            - name: PGID
+              value: {{ .Values.config.pgid }}
+            - name: TZ
               value: {{ .Values.config.timezone | quote }}
-            - name: BASE_URL:
+            - name: BASE_URL
               value: {{ .Values.config.url | quote }}
-            - name: DB_ENGINE:
+            - name: DB_ENGINE
               value: postgres
-            - name: POSTGRES_USER:
+            - name: POSTGRES_USER
               value: {{ .Values.postgresql.auth.username | quote }}
             {{- if and .Values.postgresql.auth.existingSecret .Values.postgresql.auth.secretKeys.userPasswordKey }}
-            - name: POSTGRES_PASSWORD:
+            - name: POSTGRES_PASSWORD
               valueFrom:
                 secretKeyRef:
                   name: {{ .Values.postgresql.auth.existingSecret }}
