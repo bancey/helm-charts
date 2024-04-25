@@ -1,0 +1,20 @@
+name: mealie
+maintainers:
+  - name: bancey
+    url: https://github.com/bancey/helm-charts
+apiVersion: v2
+version: 0.1.0
+description: Mealie Helm Chart
+home: https://github.com/bancey/helm-charts/tree/develop/charts/mealie
+icon: https://avatars.githubusercontent.com/u/92342333?s=48&v=4
+keywords:
+  - kubernetes
+  - mealie
+sources:
+  - https://github.com/mealie-recipes/mealie/
+
+dependencies:
+  - condition: global.postgresqlEnabled
+    name: postgresql
+    repository: https://charts.bitnami.com/bitnami
+    version: 12.x.x

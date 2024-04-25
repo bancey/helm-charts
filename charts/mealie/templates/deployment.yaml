@@ -1,0 +1,97 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "mealie.fullname" . }}
+  namespace: {{ .Release.Namespace }}
+  labels:
+    {{- include "mealie.labels" . | nindent 4 }}
+spec:
+  replicas: {{ .Values.replicaCount }}
+  selector:
+    matchLabels:
+      {{- include "mealie.selectorLabels" . | nindent 6 }}
+  template:
+    metadata:
+      labels:
+        {{- include "mealie.selectorLabels" . | nindent 8 }}
+    spec:
+    {{- with .Values.global.imagePullSecrets }}
+      imagePullSecrets:
+        {{- toYaml . | nindent 8 }}
+    {{- end }}
+      serviceAccountName: {{ include "mealie.serviceAccountName" . }}
+      affinity:
+        podAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+          - labelSelector:
+              matchExpressions:
+              - key: app.kubernetes.io/instance
+                operator: In
+                values:
+                - {{ .Release.Name }}
+            topologyKey: "kubernetes.io/hostname"
+      containers:
+        - name: {{ .Chart.Name }}
+          image: "{{ .Values.image }}"
+          imagePullPolicy: {{ .Values.global.imagePullPolicy }}
+          env:
+            - name: ALLOW_SIGNUP:
+              value: {{ .Values.config.allowSignup }}
+            - name: PUID:
+              value: {{ .Values.config.puid }}
+            - name: PGID:
+              value: {{ .Values.config.pgid }}
+            - name: TZ:
+              value: {{ .Values.config.timezone | quote }}
+            - name: BASE_URL:
+              value: {{ .Values.config.url | quote }}
+            - name: DB_ENGINE:
+              value: postgres
+            - name: POSTGRES_USER:
+              value: {{ .Values.postgresql.auth.username | quote }}
+            {{- if and .Values.postgresql.auth.existingSecret .Values.postgresql.auth.secretKeys.userPasswordKey }}
+            - name: POSTGRES_PASSWORD:
+              valueFrom:
+                secretKeyRef:
+                  name: {{ .Values.postgresql.auth.existingSecret }}
+                  key: {{ .Values.postgresql.auth.secretKeys.userPasswordKey }}
+            {{- else }}
+            - name: POSTGRES_PASSWORD
+              value: {{ .Values.postgresql.auth.password }}
+            {{- end }}
+            - name: POSTGRES_SERVER
+              value: {{ include "mealie.fullname" . }}-postgresql-0
+            - name: POSTGRES_PORT
+              value: 5432
+            - name: POSTGRES_DB
+              value: {{ .Values.postgresql.auth.database }}
+          volumeMounts:
+            {{- if .Values.persistence.enabled }}
+            - name: data
+              mountPath: "/a
+              pp/data"
+            {{- end }}
+          ports:
+            - name: http
+              containerPort: {{ .Values.service.port }}
+              protocol: TCP
+          resources:
+            {{- toYaml .Values.resources | nindent 12 }}
+      {{- with .Values.nodeSelector }}
+      nodeSelector:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+    {{- with .Values.affinity }}
+      affinity:
+        {{- toYaml . | nindent 8 }}
+    {{- end }}
+    {{- with .Values.tolerations }}
+      tolerations:
+        {{- toYaml . | nindent 8 }}
+    {{- end }}
+      volumes:
+        {{- if .Values.persistence.enabled }}
+        - name: data
+          persistentVolumeClaim:
+            claimName: {{ include "mealie.fullname" . }}
+        {{- end }}
