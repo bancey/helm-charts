@@ -7,6 +7,13 @@ replicaCount: 1
 
 image: ghcr.io/mealie-recipes/mealie:latest
 
+config:
+  allowSignup: true
+  puid:
+  pgid:
+  timezone: "Europe/London"
+  url: "http://mealie.local"
+
 nameOverride: "mealie"
 fullnameOverride: "mealie"
 
