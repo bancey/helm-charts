@@ -1,5 +1,29 @@
 apiVersion: v1
 entries:
+  mealie:
+  - apiVersion: v2
+    created: "2024-04-25T20:46:07.832332242Z"
+    dependencies:
+    - condition: global.postgresqlEnabled
+      name: postgresql
+      repository: https://charts.bitnami.com/bitnami
+      version: 12.x.x
+    description: Mealie Helm Chart
+    digest: 6874edda422c3e0218b5e29cbdeac7e01c2c65e26c0a931bff9a60f1abb8cc6f
+    home: https://github.com/bancey/helm-charts/tree/develop/charts/mealie
+    icon: https://avatars.githubusercontent.com/u/92342333?s=48&v=4
+    keywords:
+    - kubernetes
+    - mealie
+    maintainers:
+    - name: bancey
+      url: https://github.com/bancey/helm-charts
+    name: mealie
+    sources:
+    - https://github.com/mealie-recipes/mealie/
+    urls:
+    - https://github.com/bancey/helm-charts/releases/download/mealie-0.1.0/mealie-0.1.0.tgz
+    version: 0.1.0
   penpot:
   - apiVersion: v2
     created: "2024-04-22T14:55:14.270107523Z"
@@ -468,4 +492,4 @@ entries:
     urls:
     - https://github.com/bancey/helm-charts/releases/download/xarr-0.1.0/xarr-0.1.0.tgz
     version: 0.1.0
-generated: "2024-04-22T14:55:14.270189195Z"
+generated: "2024-04-25T20:46:07.832387916Z"
