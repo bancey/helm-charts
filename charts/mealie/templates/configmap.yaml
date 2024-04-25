@@ -11,6 +11,6 @@ data:
   BASE_URL: {{ .Values.config.url | quote }}
   DB_ENGINE: "postgres"
   POSTGRES_USER: {{ .Values.postgresql.auth.username | quote }}
-  POSTGRES_SERVER: {{ .Release.Name }}-postgresql-0
+  #POSTGRES_SERVER: {{ .Release.Name }}-postgresql-0
   POSTGRES_PORT: 5432
   POSTGRES_DB: {{ .Values.postgresql.auth.database | quote }}
