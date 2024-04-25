@@ -56,7 +56,7 @@ app.kubernetes.io/instance: {{ .Release.Name }}
 Create the name of the service account to use.
 */}}
 {{- define "mealie.serviceAccountName" -}}
-{{- if .Values.serviceAccount.enabled -}}
+{{- if .Values.serviceAccount.create -}}
     {{ default (include "mealie.fullname" .) .Values.serviceAccount.name }}
 {{- else -}}
     {{ default "default" .Values.serviceAccount.name }}
