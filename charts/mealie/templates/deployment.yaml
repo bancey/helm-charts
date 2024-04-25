@@ -36,11 +36,11 @@ spec:
           imagePullPolicy: {{ .Values.global.imagePullPolicy }}
           env:
             - name: ALLOW_SIGNUP
-              value: {{ .Values.config.allowSignup }}
+              value: {{ .Values.config.allowSignup | quote }}
             - name: PUID
-              value: {{ .Values.config.puid }}
+              value: {{ .Values.config.puid | quote }}
             - name: PGID
-              value: {{ .Values.config.pgid }}
+              value: {{ .Values.config.pgid | quote }}
             - name: TZ
               value: {{ .Values.config.timezone | quote }}
             - name: BASE_URL
