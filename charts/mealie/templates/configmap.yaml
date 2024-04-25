@@ -3,7 +3,7 @@ kind: ConfigMap
 metadata:
   name: {{ include "mealie.fullname" . }}-configmap
 data:
-  APP_URL: {{ .Values.appConfig.url }}
+  APP_URL: {{ .Values.config.url }}
   ALLOW_SIGNUP: {{ .Values.config.allowSignup | quote }}
   PUID: {{ .Values.config.puid | quote }}
   PGID: {{ .Values.config.pgid | quote }}
