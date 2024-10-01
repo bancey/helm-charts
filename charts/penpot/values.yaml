@@ -40,7 +40,7 @@ serviceAccount:
 backend:
   ## @param backend.image The image to use for the backend.
   ##
-  image: penpotapp/backend:2.0.1
+  image: penpotapp/backend:2.2.0
   ## @param backend.replicaCount The number of replicas to deploy.
   ##
   replicaCount: 1
