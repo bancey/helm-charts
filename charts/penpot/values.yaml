@@ -104,7 +104,7 @@ backend:
 frontend:
   ## @param frontend.image The image to use for the frontend.
   ##
-  image: penpotapp/frontend:2.0.1
+  image: penpotapp/frontend:2.2.0
   ## @param frontend.replicaCount The number of replicas to deploy.
   ##
   replicaCount: 1
