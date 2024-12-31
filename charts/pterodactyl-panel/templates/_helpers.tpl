@@ -60,3 +60,27 @@ Create the name of the service account to use
 {{- default "default" .Values.serviceAccount.name }}
 {{- end }}
 {{- end }}
+
+{{/*
+Define a new variable for the app key
+*/}}
+{{- define "pterodactyl-panel.appKey" -}}
+{{- if .Values.appConfig.key }}
+{{- .Values.appCOnfig.key | quote }}
+{{- else }}
+{{- randAlphaNum 32 | quote }}
+{{- end }}
+{{- end }}
+
+{{/*
+Define a new variable for the app hash salt
+*/}}
+{{- define "pterodactyl-panel.appHashSalt" -}}
+{{- if .Values.appConfig.hashSalt }}
+{{- .Values.appConfig.hashSalt | quote }}
+{{- else }}
+{{- randAlphaNum 20 | quote }}
+{{- end }}
+{{- end }}
+
+{{/*
