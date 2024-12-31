@@ -82,5 +82,3 @@ Define a new variable for the app hash salt
 {{- randAlphaNum 20 | quote }}
 {{- end }}
 {{- end }}
-
-{{/*
