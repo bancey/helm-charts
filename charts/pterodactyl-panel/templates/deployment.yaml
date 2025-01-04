@@ -44,10 +44,14 @@ spec:
           envFrom:
             - configMapRef:
                 name: {{ include "pterodactyl-panel.fullname" . }}-configmap
+            {{- if not .Values.appConfig.secretName }}
             - secretRef:
                name: {{ include "pterodactyl-panel.fullname" . }}-{{ .Values.appConfig.appKey.secretName }}
+            {{- end }}
+            {{- if not .Values.appConfig.secretName }}
             - secretRef:
                 name: {{ include "pterodactyl-panel.fullname" . }}-{{ .Values.appConfig.hashIds.secretName }}
+            {{- end }}
             {{- if .Values.appConfig.mailSecretRef }}
             - secretRef:
                 name: {{ .Values.appConfig.mailSecretRef }}
