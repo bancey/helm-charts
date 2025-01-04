@@ -52,6 +52,10 @@ spec:
             - secretRef:
                 name: {{ .Values.appConfig.mailSecretRef }}
             {{- end }}
+            {{- if .Values.appConfig.secretName }}
+            - secretRef:
+                name: {{ .Values.appConfig.secretName }}
+            {{- end }}
           volumeMounts:
             - mountPath: /app/var/
               name: pterodactyl-panel-storage
