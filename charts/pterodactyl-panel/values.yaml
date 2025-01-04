@@ -1,5 +1,6 @@
 appConfig:
   url: "http://pterodactyl.local"
+  secretName:
   key:
   hashSalt:
   hashLength: 8

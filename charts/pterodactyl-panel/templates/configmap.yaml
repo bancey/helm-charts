@@ -21,7 +21,7 @@ data:
   DB_DATABASE: {{ .Values.mariadb.auth.database }}
   DB_USERNAME: {{ .Values.mariadb.auth.username }}
   DB_PASSWORD: {{ .Values.mariadb.auth.password }}
-  {{- if .Values.appConfig.mailSecretRef }}
+  {{- if not .Values.appConfig.mailSecretRef }}
   MAIL_DRIVER: {{ .Values.appConfig.mail.driver }}
   MAIL_HOST: {{ .Values.appConfig.mail.host }}
   MAIL_PORT: {{ .Values.appConfig.mail.port | quote }}
