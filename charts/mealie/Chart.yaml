@@ -3,7 +3,7 @@ maintainers:
   - name: bancey
     url: https://github.com/bancey/helm-charts
 apiVersion: v2
-version: 0.1.0
+version: 0.1.1
 description: Mealie Helm Chart
 home: https://github.com/bancey/helm-charts/tree/develop/charts/mealie
 icon: https://avatars.githubusercontent.com/u/92342333?s=48&v=4
@@ -17,4 +17,4 @@ dependencies:
   - condition: global.postgresqlEnabled
     name: postgresql
     repository: https://charts.bitnami.com/bitnami
-    version: 12.x.x
+    version: 16.x
