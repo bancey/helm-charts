@@ -63,6 +63,7 @@ spec:
             {{- else }}
             claimName: {{ include "xarr.fullname" . }}-config
             {{- end }}
+        {{- if .Values.persistence.data.enabled }}
         - name: data
           persistentVolumeClaim:
             {{- if .Values.persistence.data.claimName }}            
@@ -70,6 +71,7 @@ spec:
             {{- else }}
             claimName: {{ include "xarr.fullname" . }}-data
             {{- end }}
+        {{- end }}
       {{- with .Values.nodeSelector }}
       nodeSelector:
         {{- toYaml . | nindent 8 }}
