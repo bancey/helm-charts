@@ -668,6 +668,17 @@ entries:
     version: 0.1.0
   xarr:
   - apiVersion: v2
+    created: "2025-01-19T18:03:20.49640139Z"
+    description: A helm chart for deploying any of the *arr apps on Kubernetes, specifically
+      Sonarr, Radarr and Lidarr.
+    digest: 785d04d906eefde052e720b68d29c5969c7d2415b008cd964ee958a081795599
+    icon: https://store-images.s-microsoft.com/image/apps.39677.e18fb5e2-7120-410b-90c4-90fcac73a4e3.a453a967-665c-460b-b449-7dfc5e3ee9dc.29b3484d-1c93-4db8-9746-450ff2dc428c?mode=scale&h=100&q=90&w=100
+    name: xarr
+    type: application
+    urls:
+    - https://github.com/bancey/helm-charts/releases/download/xarr-0.2.5/xarr-0.2.5.tgz
+    version: 0.2.5
+  - apiVersion: v2
     created: "2025-01-19T17:55:11.290419211Z"
     description: A helm chart for deploying any of the *arr apps on Kubernetes, specifically
       Sonarr, Radarr and Lidarr.
@@ -734,4 +745,4 @@ entries:
     urls:
     - https://github.com/bancey/helm-charts/releases/download/xarr-0.1.0/xarr-0.1.0.tgz
     version: 0.1.0
-generated: "2025-01-19T17:55:11.290491215Z"
+generated: "2025-01-19T18:03:20.496503902Z"
