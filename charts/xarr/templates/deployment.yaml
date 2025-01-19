@@ -53,8 +53,10 @@ spec:
           volumeMounts:
             - name: config
               mountPath: /config
+            {{- if .Values.persistence.data.enabled }}
             - name: data
               mountPath: /data
+            {{- end }}
       volumes:
         - name: config
           persistentVolumeClaim:
