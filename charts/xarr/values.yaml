@@ -84,3 +84,11 @@ affinity: {}
 
 config:
   port: 8989
+
+env: []
+  # - name: DOCKER_MODS
+  #   value: lscr.io/linuxserver/mods:universal-unrar6
+  # - name: PUID
+  #   value: "1000"
+  # - name: PGID
+  #   value: "1000"
