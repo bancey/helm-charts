@@ -85,3 +85,11 @@ nodeSelector: {}
 tolerations: []
 
 affinity: {}
+
+env: []
+  # - name: DOCKER_MODS
+  #   value: lscr.io/linuxserver/mods:universal-unrar6
+  # - name: PUID
+  #   value: "1000"
+  # - name: PGID
+  #   value: "1000"
